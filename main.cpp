@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numUniqueEmails(vector<string>& emails) {
-        set<string> tempSet;
+        unordered_map<string, int> tempMap;
         
         for (int i = 0; i < emails.size(); ++i) {
             const string &str = emails[i];
@@ -25,8 +25,9 @@ public:
                 }
             }
             
-            tempSet.insert(tempStr);
+            tempMap.insert(pair<string, int>(tempStr, 0));
         }
-        return tempSet.size();
+                           
+        return tempMap.size();
     }
 };
