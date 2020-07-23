@@ -1,26 +1,29 @@
 class Solution {
 public:
     int numUniqueEmails(vector<string>& emails) {
-        unordered_map<string, int> tempMap;
+        map<string, int> tempMap;
         
         for (int i = 0; i < emails.size(); ++i) {
             const string &str = emails[i];
-            string tempStr = "";
+            char tempStr[100] = {0};
+            int index = 0;
             bool plusFound = false;
             
             for (int j = 0; j < str.size(); ++j) {
                 if (str[j] != '.') {
                     if (str[j] == '+') {
-                        plusFound = true;    
+                        for (; str[j] != '@'; ++j) {
+                        }
+                        j--;
                     }
                     else if (str[j] == '@') {
-                        tempStr += str.substr(j, str.size() - j);
+                        for (; j < str.size(); ++j) {
+                            tempStr[index++] = str[j];
+                        }
                         break;
                     }
                     else {
-                        if (!plusFound) {
-                            tempStr += str[j];
-                        }
+                        tempStr[index++] = str[j];
                     }
                 }
             }
