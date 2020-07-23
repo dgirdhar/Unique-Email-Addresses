@@ -11,4 +11,9 @@ Version 2: In this version I have used unordered_map to improve the performance.
 Runtime: 56 ms, faster than 55.45% of C++ online submissions for Unique Email Addresses.
 Memory Usage: 15.3 MB, less than 24.83% of C++ online submissions for Unique Email Addresses.
 
+Version 3: Used map and changed string to char array. Got better results.
+Runtime: 40 ms, faster than 96.55% of C++ online submissions for Unique Email Addresses.
+Memory Usage: 14.2 MB, less than 62.25% of C++ online submissions for Unique Email Addresses.
+
+
 - Dhiraj Girdhar
